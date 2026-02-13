@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loading...</title>
+    <style>
+        body { background-color: #000; color: white; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+    </style>
+</head>
+<body>
+    <p>Redirecting to site Thanks for using sonarOS</p>
+
+    <script>
+        // 1. SET YOUR LINK HERE
+        const destination = "https://sonarweb.base44.app"; 
+
+        // 2. Function to open the link
+        function openCloaked() {
+            // Create a new blank window
+            const win = window.open('about:blank', '_blank');
+            
+            // Set the new window's document content
+            const doc = win.document;
+            const iframe = doc.createElement('iframe');
+
+            // Style the iframe to fill the entire page
+            iframe.style.position = "fixed";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.bottom = "0";
+            iframe.style.right = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.style.margin = "0";
+            iframe.style.padding = "0";
+            iframe.style.overflow = "hidden";
+            
+            // Set the source to your link
+            iframe.src = destination;
+
+            // Inject the iframe into the about:blank page
+            doc.body.appendChild(iframe);
+            doc.body.style.margin = "0";
+        }
+
+        // Run the function as soon as the page loads
+        window.onload = openCloaked;
+    </script>
+</body>
+</html>
